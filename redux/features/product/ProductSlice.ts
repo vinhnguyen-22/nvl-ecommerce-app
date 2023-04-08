@@ -1,5 +1,5 @@
 import { createAsyncThunk, createEntityAdapter, createSlice } from "@reduxjs/toolkit";
-import { Product } from "../model/product";
+import { Product } from "../../../app/model/product";
 import axios from "axios";
 
 
