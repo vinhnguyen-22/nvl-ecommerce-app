@@ -1,5 +1,11 @@
-const ProductDetail = () => {
-  return <div>qwefqwef</div>;
+import ProductDetail from "./ProductDetail";
+
+const ProductDetailPage = () => {
+  return (
+  <div>
+    <ProductDetail/>
+  </div>
+  );
 };
 
-export default ProductDetail;
+export default ProductDetailPage;

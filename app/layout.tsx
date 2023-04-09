@@ -2,7 +2,9 @@ import { Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
-import RegisterModel from "./components/modules/RegisterModel";
+import RegisterModel from "./components/modals/RegisterModal";
+import Footer from "./components/Footer";
+import Home from "./page";
 
 export const metadata = {
   title: "NVL",
@@ -24,6 +26,8 @@ export default function RootLayout({
         <ClientOnly>
           <RegisterModel />
           <Navbar />
+          
+          <Footer/>
         </ClientOnly>
         <div className="pb-20 pt-28">{children}</div>
       </body>

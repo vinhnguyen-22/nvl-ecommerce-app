@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { producttest } from "../page";
 import HeartButton from "../components/HeartButton";
-
+import Button from "../components/Button";
 
 export interface ProductCardProps {
   id: number;
@@ -19,37 +19,37 @@ export interface ProductCardProps {
   actionId?: string;
 }
 
-export const data: ProductCardProps[] =  [
-    {
-      id: 1,
-      name: "first",
-      description: "lorem ipsum",
-      sku: 1,
-      imageUrl: "/images/placeholder.png",
-      status: 0,
-      category: "Bay",
-    },
-  
-    {
-      id: 2,
-      name: "second",
-      description: "lorem ipsum",
-      sku: 3,
-      imageUrl: "/images/placeholder.png",
-      status: 1,
-      category: "Lac",
-    },
-  
-    {
-      id: 3,
-      name: "last",
-      description: "lorem ipsum",
-      sku: 4,
-      imageUrl: "/images/placeholder.png",
-      status: 1,
-      category: "aaaaa",
-    },
-  ];
+export const data: ProductCardProps[] = [
+  {
+    id: 1,
+    name: "first",
+    description: "lorem ipsum",
+    sku: 1,
+    imageUrl: "/images/placeholder.png",
+    status: 0,
+    category: "Bay",
+  },
+
+  {
+    id: 2,
+    name: "second",
+    description: "lorem ipsum",
+    sku: 3,
+    imageUrl: "/images/placeholder.png",
+    status: 1,
+    category: "Lac",
+  },
+
+  {
+    id: 3,
+    name: "last",
+    description: "lorem ipsum",
+    sku: 4,
+    imageUrl: "/images/placeholder.png",
+    status: 1,
+    category: "aaaaa",
+  },
+];
 
 const ProductCard: React.FC<ProductCardProps> = ({
   id,
@@ -67,7 +67,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const router = useRouter();
   return (
     <div
-      onClick={() => {}}
+      onClick={() => router.push("/catalog/page")}
       className="
         col-span-1 cursor-pointer group
         ">
@@ -93,20 +93,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
                         "
           />
           <div className="absolute top-3 right-3">
-            <HeartButton listingId={""}                
-            />
+            <HeartButton listingId={""} />
           </div>
         </div>
         <div className="font-semibold" text-lg>
-           name
+          name
         </div>
-        <div className="font-light text-neutral-500">
-            Category
+        <div className="font-light text-neutral-500">Category</div>
+        <div className="flex flex-row items-center gap-1">
+          <div className="font-semibold">$ Price</div>
         </div>
-        <div className="font-semibold">
-            $ Price
-        </div>
-        {}
+        <Button small label="Add to cart" onClick={() => {}} />
       </div>
     </div>
   );
