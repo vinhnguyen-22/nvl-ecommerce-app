@@ -1,8 +1,10 @@
 "use client";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiFillHeart, AiOutlineMenu } from "react-icons/ai";
 import Avatar from "../Avatar";
 import { useCallback, useState } from "react";
 import MenuItem from "./MenuItem";
+import { FaShoppingCart } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +12,7 @@ const UserMenu = () => {
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
   }, []);
-
+  const router = useRouter();
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
@@ -29,6 +31,80 @@ const UserMenu = () => {
                 cursor-pointer
                 ">
           NVL Your home
+        </div>
+        <div
+          onClick={() => router.push("/cart/page")}
+          className="
+                relative
+                hidden
+                md:block
+                text-3xl
+                font-semibold
+                py-3
+                px-4
+                rounded-full
+                hover:bg-neutral-100
+                transition
+                cursor-pointer
+                text-green-600
+                
+                ">
+          <span
+            className="
+            absolute
+            right-0
+            -top-1
+            w-5
+            h-5
+            flex
+            items-center
+            justify-center
+            text-[13px]
+            bg-red-600
+            rounded-full
+            place-items-center
+            text-white
+          ">
+            0
+          </span>
+          <FaShoppingCart />
+        </div>
+        <div
+          onClick={() => {}}
+          className="
+                relative
+                hidden
+                md:block
+                text-3xl
+                font-semibold
+                py-3
+                px-4
+                rounded-full
+                hover:bg-neutral-100
+                transition
+                cursor-pointer
+                text-green-600
+                
+                ">
+          <span
+            className="
+          absolute
+          right-0
+          -top-1
+          w-5
+          h-5
+          flex
+          items-center
+          justify-center
+          text-[13px]
+          bg-red-600
+          rounded-full
+          place-items-center
+          text-white
+          ">
+            0
+          </span>
+          <AiFillHeart />
         </div>
         <div
           onClick={toggleOpen}
@@ -70,14 +146,8 @@ const UserMenu = () => {
         ">
           <div className="flex flex-col cursor-pointer">
             <>
-              <MenuItem 
-                onClick={() => {}} 
-                label="Login" 
-              />
-              <MenuItem 
-                onClick={() => {}} 
-                label="Sign up" 
-              />
+              <MenuItem onClick={() => {}} label="Login" />
+              <MenuItem onClick={() => {}} label="Sign up" />
             </>
           </div>
         </div>

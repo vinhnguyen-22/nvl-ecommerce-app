@@ -30,7 +30,7 @@ const Search = () => {
                 px-6
                 "
                 >
-                    Anywhere
+                    Home
                 </div>
                 <div
                 className="
@@ -44,7 +44,21 @@ const Search = () => {
                 text-center
                 "
                 >
-                    Any Week
+                   Category
+                </div>
+                <div
+                className="
+                hidden
+                sm:block
+                text-sm
+                font-semibold
+                px-6
+                border-x-[1px]
+                flex-1
+                text-center
+                "
+                >
+                   Support  
                 </div>
                 <div
                 className="
@@ -58,7 +72,7 @@ const Search = () => {
                 gap-3
                 "
                 >
-                    <div className="hidden sm:block">Add Guests</div>
+                    <div className="hidden sm:block">Contact</div>
                     <div
                     className="
                     p-2

@@ -2,6 +2,7 @@
 import Container from "../Container";
 import Categories from "./Categories";
 import Logo from "./Logo";
+import Nav from "./Nav";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
 
@@ -10,7 +11,7 @@ const Navbar = () => {
         <div className="fixed w-full bg-white z-10 shadow-sm">
             <div
                 className="
-                py-4
+                py-1
                 border-b-[1px]
                 "
             >
@@ -29,6 +30,7 @@ const Navbar = () => {
                         <Search/>
                         <UserMenu/>
                     </div>
+                    <Nav/>
                 </Container>
             </div>
             <Categories/>
