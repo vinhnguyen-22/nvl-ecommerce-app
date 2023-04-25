@@ -1,11 +1,10 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "./page.module.css";
-import Product from "./catalog/page";
 import ClientOnly from "./components/ClientOnly";
 import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
-import ProductCard from "./catalog/ProductCard";
+import ProductCard from "./product/ProductCard";
 
 const inter = Inter({ subsets: ["latin"] });
 

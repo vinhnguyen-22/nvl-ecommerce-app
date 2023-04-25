@@ -5,6 +5,7 @@ import { useCallback, useState } from "react";
 import MenuItem from "./MenuItem";
 import { FaShoppingCart } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,8 +17,8 @@ const UserMenu = () => {
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
-        <div
-          onClick={() => {}}
+        <Link
+          href="/user"
           className="
                 hidden
                 md:block
@@ -31,7 +32,7 @@ const UserMenu = () => {
                 cursor-pointer
                 ">
           NVL Your home
-        </div>
+        </Link>
         <div
           onClick={() => router.push("/cart/page")}
           className="

@@ -7,10 +7,11 @@ import { GoThreeBars } from "react-icons/go";
 const Nav = () => {
   const [navbar, setNavbar] = useState(false);
   return (
-    <nav className="bg-gray-700">
-      <div className="container flex">
+    <nav className="bg-gray-700 border rounded-lg">
+      <div className="container flex ">
         <div
           className="
+          rounded-lg
           px-8
           py-4
           bg-green-600
