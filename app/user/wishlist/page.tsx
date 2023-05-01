@@ -1,12 +1,13 @@
-"user client"
+"user client";
 import React from "react";
-import UserDetailPage from "./UserDetail";
+
 import UserLayout from "../UserLayout";
+import UserWishlist from "./UserWishlist";
 
 const page = () => {
   return (
     <UserLayout>
-      <UserDetailPage />
+        <UserWishlist/>
     </UserLayout>
   );
 };

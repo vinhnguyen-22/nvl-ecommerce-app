@@ -71,7 +71,7 @@ const UserMenu = () => {
           <FaShoppingCart />
         </div>
         <div
-          onClick={() => {}}
+          onClick={() => router.push("/user/wishlist")}
           className="
                 relative
                 hidden

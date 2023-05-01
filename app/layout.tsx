@@ -5,6 +5,7 @@ import ClientOnly from "./components/ClientOnly";
 import RegisterModel from "./components/modals/RegisterModal";
 import Footer from "./components/Footer";
 import Home from "./page";
+import Container from "./components/Container";
 
 export const metadata = {
   title: "NVL",
@@ -26,8 +27,8 @@ export default function RootLayout({
         <ClientOnly>
           <RegisterModel />
           <Navbar />
-          <div className="pb-20 pt-28">{children}</div>
-          <Footer/>
+          <div className="pt-28">{children}</div>
+          <Footer />
         </ClientOnly>
       </body>
     </html>

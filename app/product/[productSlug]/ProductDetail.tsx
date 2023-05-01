@@ -1,6 +1,5 @@
 "use client";
 import ClientOnly from "@/app/components/ClientOnly";
-import Container from "@/app/components/Container";
 import Image from "next/image";
 import {
   FaFacebookSquare,
@@ -12,11 +11,12 @@ import { AiFillHeart } from "react-icons/ai";
 import { ImSearch } from "react-icons/im";
 
 import ReactStars from "react-stars";
+import BodyContainer from "@/app/components/BodyContainer";
 
 const ProductDetail = () => {
   return (
-    <Container>
-      <div className="container grid grid-cols-2 gap-6 mt-5">
+    <BodyContainer>
+      <div className="container grid grid-cols-2 gap-6 mt-5 bg-white shadow rounded-lg">
         <div>
           <Image
             width={800}
@@ -180,7 +180,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-      <div className="container pb-16">
+      <div className="container pb-16 bg-white mt-5 px-3 py-3 shadow rounded-lg mb-5">
         <h3 className="border-b border-gray-200 font-roboto text-gray-800 pb-3 font-medium text-xl">
           Product details
         </h3>
@@ -259,7 +259,69 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-    </Container>
+      <div className="container pb-16 bg-white mt-5 px-3 py-3 shadow rounded-lg mb-5">
+        <div className="px-4 py-3 shadow flex items-center gap-4 bg-white rounded">
+          <div className="flex-shrink-0">
+            <Image
+              width={50}
+              height={50}
+              alt="listing"
+              src="/images/placeholder.png"
+              className="
+                rounded-full
+                w-14
+                h-14
+                border 
+                border-gray-200
+                p-1
+                object-cover  
+                "
+            />
+          </div>
+          <div className="flex-grow">
+            <p className="text-gray-600">Name </p>
+            <h4 className="text-gray-800 font-medium">
+              <div className="flex gap-1 text-sm text-yellow-400">
+                <ReactStars count={5} size={24} color2={"#ffd700"} />
+              </div>
+            </h4>
+          </div>
+        </div>
+        <div className="w-3/5 pt-6">
+          <div className="text-gray-600 space-y-3 px-3 ">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="container pb-16 bg-white mt-5 px-3 py-3 shadow rounded-lg mb-5">
+        <form action="" className="w-full p-4">
+          <div className="mb-2">
+            <label className="text-lg text-gray-600">Your rating</label>
+            <div className="flex gap-1 text-sm text-yellow-400">
+              <ReactStars count={5} size={24} color2={"#ffd700"} />
+            </div>
+          </div>
+          <div className="mb-2">
+            <label className="text-lg text-gray-600">Add a comment</label>
+            <textarea
+              className="w-full h-20 p-2 border rounded focus:outline-none focus:ring-gray-300 focus:ring-1"
+              name="comment"
+              placeholder="Write something"></textarea>
+          </div>
+          <button className="px-3 py-2 text-sm font-medium text-white bg-green-600 rounded">
+            Post{" "}
+          </button>
+        </form>
+      </div>
+    </BodyContainer>
   );
 };
 

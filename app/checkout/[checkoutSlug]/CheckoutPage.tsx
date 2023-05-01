@@ -1,14 +1,14 @@
 "use client";
 
-import Container from "@/app/components/Container";
+import BodyContainer from "@/app/components/BodyContainer";
 import { AiFillHome } from "react-icons/ai";
 import { BiChevronRight } from "react-icons/bi";
 
 const CheckoutPage = () => {
   const InputDivStyle =
-    "block w-full border px-4 py-3 text-gray-600 text-sm rounded placeholder-gray-400 focus:border-green-600 focus:ring-0";
+    "block w-full border px-4 py-3 text-gray-600 text-xs rounded placeholder-gray-400 focus:border-green-600 focus:ring-0";
   return (
-    <Container>
+    <BodyContainer>
       <div className="container py-4 flex items-center gap-3">
         <div className="text-green-600 text-base">
           <AiFillHome />
@@ -19,67 +19,119 @@ const CheckoutPage = () => {
         <p className="text-gray-600 font-medium">Checkout</p>
       </div>
 
-      <div className="container gap-6 grid grid-cols-12 items-start pb-16 pt-4">
-        <div className="col-span-8 border border-green-300 p-4 rounded">
-          <h3 className="text-lg font-medium capitalize mb-4 ">Checkout</h3>
-          <div className="space-y-4 ">
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="text-gray-600 mb-2 block">
-                  First Name
-                  <span className="text-red-800">*</span>
-                </label>
-                <input type="text" className={InputDivStyle} />
+      <div className="container  gap-6 grid grid-cols-12 items-start ">
+        <div className="col-span-8 gap 2 mb-5">
+          <div className="border border-green-300 p-4 rounded bg-white shadow-lg">
+            <h3 className="text-lg font-medium capitalize mb-4 ">
+              Shipping Address
+            </h3>
+            <div className="space-y-4 ">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-gray-600 mb-2 block">First Name</label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
+                <div>
+                  <label className="text-gray-600 mb-2 block">Last Name</label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
               </div>
-              <div>
-                <label className="text-gray-600 mb-2 block">
-                  Last Name
-                  <span className="text-red-800">*</span>
-                </label>
-                <input type="text" className={InputDivStyle} />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-gray-600 mb-2 block">
+                    Phone number
+                  </label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
+                <div>
+                  <label className="text-gray-600 mb-2 block">Company</label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-gray-600 mb-2 block">Zip code</label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
+                <div>
+                  <label className="text-gray-600 mb-2 block">Country</label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-gray-600 mb-2 block">Address 1</label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
+                <div>
+                  <label className="text-gray-600 mb-2 block">Address 2</label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
               </div>
             </div>
-            <div>
-              <label className="text-gray-600 mb-2 block">Company Name</label>
-              <input type="text" className={InputDivStyle} />
-            </div>
-            <div>
-              <label className="text-gray-600 mb-2 block">Country/Region</label>
-              <input type="text" className={InputDivStyle} />
-            </div>
-            <div>
-              <label className="text-gray-600 mb-2 block">Street Address</label>
-              <input type="text" className={InputDivStyle} />
-            </div>
-            <div>
-              <label className="text-gray-600 mb-2 block">Town/City</label>
-              <input type="text" className={InputDivStyle} />
-            </div>
-            <div>
-              <label className="text-gray-600 mb-2 block">
-                Zip code
-                <span className="text-red-800">*</span>
+          </div>
+
+          <div className="border border-green-300 mt-3 p-4 rounded bg-white shadow-lg">
+            <h3 className="text-lg font-medium capitalize mb-4 ">
+              Billing Address
+            </h3>
+            <div className="flex items-center mb-4 mt-2">
+              <input
+                type="checkbox"
+                className="text-red-500 focus:ring-0 rounded-sm cursor-pointer w-3 h-3"
+              />
+              <label className="text-gray-600 ml-3 cursor-pointer text-sm">
+                Same as shipping address{" "}
               </label>
-              <input type="text" className={InputDivStyle} />
             </div>
-            <div>
-              <label className="text-gray-600 mb-2 block">
-                Phone number
-                <span className="text-red-800">*</span>
-              </label>
-              <input type="text" className={InputDivStyle} />
-            </div>
-            <div>
-              <label className="text-gray-600 mb-2 block">
-                Email
-                <span className="text-red-800">*</span>
-              </label>
-              <input type="text" className={InputDivStyle} />
+            <div className="space-y-4 ">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-gray-600 mb-2 block">First Name</label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
+                <div>
+                  <label className="text-gray-600 mb-2 block">Last Name</label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-gray-600 mb-2 block">
+                    Phone number
+                  </label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
+                <div>
+                  <label className="text-gray-600 mb-2 block">Company</label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-gray-600 mb-2 block">Zip code</label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
+                <div>
+                  <label className="text-gray-600 mb-2 block">Country</label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="text-gray-600 mb-2 block">Address 1</label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
+                <div>
+                  <label className="text-gray-600 mb-2 block">Address 2</label>
+                  <input type="text" className={InputDivStyle} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="col-span-4 border border-green-300 p-4 rounded">
+        <div className="col-span-4 border border-green-300 p-4 rounded bg-white shadow-lg">
           <h4 className="text-gray-800 text-lg mb-4 font-medium uppercase">
             Order Summary
           </h4>
@@ -141,11 +193,11 @@ const CheckoutPage = () => {
             bg-green-600
             text-white
         ">
-            Check out
+            Payment
           </button>
         </div>
       </div>
-    </Container>
+    </BodyContainer>
   );
 };
 

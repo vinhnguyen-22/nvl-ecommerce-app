@@ -5,6 +5,7 @@ import ClientOnly from "./components/ClientOnly";
 import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
 import ProductCard from "./product/ProductCard";
+import BodyContainer from "./components/BodyContainer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -50,9 +51,10 @@ export default function Home() {
   }
   return (
     <ClientOnly>
-      <Container>
+      <BodyContainer>
         <div
           className="
+                mt-5
                 pt-24
                 grid
                 grid-cols-2
@@ -66,7 +68,7 @@ export default function Home() {
             return <ProductCard key={producttest.id} data={producttest} />;
           })}
         </div>
-      </Container>
+      </BodyContainer>
     </ClientOnly>
   );
 }

@@ -1,13 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Container from "@/app/components/Container";
-import { FaAddressCard, FaBoxOpen, FaHeart } from "react-icons/fa";
-import { BsFillCreditCard2BackFill } from "react-icons/bs";
-import { BiChevronRight, BiLogOut } from "react-icons/bi";
-import { AiFillHome } from "react-icons/ai";
-import UserLayout from "./UserLayout";
-
 const UserPage = () => {
   return (
     <div className="container grid grid-cols-12 items-start gap-6 pt-4 pb-16">

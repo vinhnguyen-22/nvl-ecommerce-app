@@ -2,21 +2,24 @@
 
 import Image from "next/image";
 import Button from "@/app/components/Button";
-import Container from "@/app/components/Container";
 import React from "react";
 import Counter from "@/app/components/Counter";
 import { useRouter } from "next/navigation";
-import { AiFillHome } from "react-icons/ai";
+import { AiFillDelete, AiFillHome } from "react-icons/ai";
 import { BiChevronRight } from "react-icons/bi";
+import BodyContainer from "@/app/components/BodyContainer";
+import { IoClose } from "react-icons/io5";
+import Closebutton from "@/app/components/Closebutton";
 
 const CartPage = () => {
   const SummaryItemStyle = "SummaryItem flex justify-between mt-3 w-[100%] ";
-  const ProductDivStyle = "flex w-[100%] h-auto items-center mobile:flex-col";
+  const ProductDivStyle =
+    "flex w-[100%] h-auto px-3 py-3 border-2 bg-white rounded-md border-gray-200 shadow items-center mobile:flex-col justify-between relative";
   const PriceQuantityStyle =
     "flex-auto flex flex-col justify-center items-center mobile:mt-7 mobile:mb-7";
   const router = useRouter();
   return (
-    <Container>
+    <BodyContainer>
       <div className="p-3 ">
         <div className="container py-4 flex items-center gap-3">
           <div className="text-green-600 text-base">
@@ -28,8 +31,8 @@ const CartPage = () => {
           <p className="text-gray-600 font-medium">Cart</p>
         </div>
 
-        <div className="flex justify-center text-5xl mt-3">Cart</div>
-        <div className="flex items-center justify-between mt-4 mobile:flex-col">
+        <div className="flex justify-center text-5xl">Cart</div>
+        <div className="flex items-center justify-between  mobile:flex-col">
           <button
             className="
             text-green-600  
@@ -73,8 +76,8 @@ const CartPage = () => {
           </button>
         </div>
 
-        <div className="flex flex-row mt-7 mobile:flex-col ">
-          <div className="flex flex-col flex-1 ">
+        <div className="flex flex-row mt-7 rounded-lg mobile:flex-col ">
+          <div className="flex flex-col flex-1 px-3 py-3  rounded-md   ">
             <div className={ProductDivStyle}>
               <div className="product flex self-start">
                 <Image
@@ -90,7 +93,7 @@ const CartPage = () => {
                   hover:scale-110
                   ease-in
                   duration-300
-                        "
+                  "
                 />
                 <div className="description flex flex-col ml-5 h-auto justify-between">
                   <div>
@@ -110,9 +113,12 @@ const CartPage = () => {
               </div>
               <div className={PriceQuantityStyle}>
                 <Counter />
-                <div className="flex items-center justify-center text-4xl mt-3">
+                <div className="flex items-center justify-center text-2xl mt-3">
                   <b>$69</b>
                 </div>
+              </div>
+              <div className="absolute top-3 right-3 p-3">
+                <Closebutton />
               </div>
             </div>
 
@@ -153,14 +159,19 @@ const CartPage = () => {
               </div>
               <div className={PriceQuantityStyle}>
                 <Counter />
-                <div className="flex items-center justify-center text-4xl mt-3">
+                <div className="items-center justify-center text-2xl mt-3">
                   <b>$69</b>
+                </div>
+              </div>
+              <div>
+                <div className="absolute top-3 right-3 p-3">
+                  <Closebutton />
                 </div>
               </div>
             </div>
             <hr className="mt-7 mb-7" />
           </div>
-          <div className="flex-[0.4] w-auto h-[40vh] border-2 border-green-600 rounded-md shadow-lg flex flex-col items-center">
+          <div className="flex-[0.4] w-auto h-[40vh] border-2 border-gray-200 rounded-md shadow-lg flex flex-col items-center bg-white">
             <h2 className="text-[2rem]">SUMMARY</h2>
             <div className={SummaryItemStyle}>
               <p className="ml-3">Subtotal</p>
@@ -178,10 +189,30 @@ const CartPage = () => {
               <p className="ml-3">Total</p>
               <p className="mr-3"> $140</p>
             </div>
+            <button
+              className="
+              flex
+              items-start
+              relative
+              disabled:opacity-70
+              disabled:cursor-not-allowed
+              rounded-lg
+              hover:opacity-80
+              transition
+              px-3
+              py-2
+              bg-red-600
+              text-white
+        ">
+              <div className="text-white text-2xl mr-2 mb-2 block">
+                <AiFillDelete />{" "}
+              </div>
+              Empty cart
+            </button>
           </div>
         </div>
       </div>
-    </Container>
+    </BodyContainer>
   );
 };
 

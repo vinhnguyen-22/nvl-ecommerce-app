@@ -1,12 +1,13 @@
-"user client"
+"user client";
 import React from "react";
-import UserDetailPage from "./UserDetail";
+
 import UserLayout from "../UserLayout";
+import UserOrderPage from "./UserOrder";
 
 const page = () => {
   return (
     <UserLayout>
-      <UserDetailPage />
+      <UserOrderPage />
     </UserLayout>
   );
 };

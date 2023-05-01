@@ -67,11 +67,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const router = useRouter();
   return (
     <div
-      onClick={() => router.push("/catalog/page")}
+      onClick={() => router.push("/product/page")}
       className="
-        col-span-1 cursor-pointer group
+        col-span-1 cursor-pointer group bg-white px-3 py-3 mt-2 shadow-lg rounded-lg mb-2
         ">
-      <div className="flex flex-col gap-2 w-full mt-2">
+      <div className="flex flex-col gap-2 w-full ">
         <div
           className="
                 aspect-square
@@ -81,13 +81,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 rounded-xl
                 ">
           <Image
-            fill
+            height={300}
+            width={200}
             alt="listing"
             src="/images/placeholder.png"
             className="
                         object-cover
-                        h-full
-                        w-full
+
                         group-hover:scale-110
                         transition
                         "

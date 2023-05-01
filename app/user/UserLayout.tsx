@@ -5,13 +5,13 @@ import { AiFillHome } from "react-icons/ai";
 import { BiChevronRight, BiLogOut } from "react-icons/bi";
 import { BsFillCreditCard2BackFill } from "react-icons/bs";
 import { FaAddressCard, FaBoxOpen, FaHeart } from "react-icons/fa";
-import Container from "../components/Container";
 import { useRouter } from "next/navigation";
+import BodyContainer from "../components/BodyContainer";
 
 const UserLayout = ({ children }: any) => {
   const router = useRouter();
   return (
-    <Container>
+    <BodyContainer>
       <div className="container py-4 flex items-center gap-3">
         <div className="text-green-600 text-base">
           <AiFillHome />
@@ -23,7 +23,7 @@ const UserLayout = ({ children }: any) => {
       </div>
       <div className="container grid grid-cols-12 items-start gap-6 pt-4 pb-16">
         <div className="col-span-3">
-          <div className="px-4 py-3 shadow flex items-center gap-4">
+          <div className="px-4 py-3 shadow flex items-center gap-4 bg-white rounded">
             <div className="flex-shrink-0">
               <Image
                 width={50}
@@ -70,7 +70,9 @@ const UserLayout = ({ children }: any) => {
             </div>
 
             <div className="space-y-1 pl-8 pt-4">
-              <div className="relative hover:text-green-600 block font-bold capitalize transition">
+              <div
+                onClick={() => router.push("/user/order")}
+                className="relative hover:text-green-600 block font-bold capitalize transition cursor-pointer">
                 <span className="absolute -left-8 top-0 text-base">
                   <FaBoxOpen />
                 </span>
@@ -88,7 +90,9 @@ const UserLayout = ({ children }: any) => {
             </div>
 
             <div className="space-y-1 pl-8 pt-4">
-              <div className="relative hover:text-green-600 block font-bold capitalize transition">
+              <div
+                onClick={() => router.push("/user/payment")}
+                className="relative hover:text-green-600 block font-bold capitalize transition cursor-pointer">
                 <span className="absolute -left-8 top-0 text-base">
                   <BsFillCreditCard2BackFill />
                 </span>
@@ -99,7 +103,9 @@ const UserLayout = ({ children }: any) => {
               </div>
             </div>
             <div className="space-y-1 pl-8 pt-4">
-              <div className="relative hover:text-green-600 block font-bold capitalize transition">
+              <div
+                onClick={() => router.push("/user/wishlist")}
+                className="relative hover:text-green-600 block font-bold capitalize transition cursor-pointer">
                 <span className="absolute -left-8 top-0 text-base">
                   <FaHeart />
                 </span>
@@ -118,7 +124,7 @@ const UserLayout = ({ children }: any) => {
         </div>
         <div className="col-span-9">{children}</div>
       </div>
-    </Container>
+    </BodyContainer>
   );
 };
 

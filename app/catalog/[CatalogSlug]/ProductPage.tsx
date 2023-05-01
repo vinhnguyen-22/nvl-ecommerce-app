@@ -1,17 +1,20 @@
 "use client";
-import ClientOnly from "../../components/ClientOnly";
-import Container from "../../components/Container";
+import ReactStars from "react-stars";
 import Image from "next/image";
+import { AiFillHeart } from "react-icons/ai";
+import { ImSearch } from "react-icons/im";
+import BodyContainer from "@/app/components/BodyContainer";
+import { IoClose } from "react-icons/io5";
 
 const ProductCatalog = () => {
   return (
-    <Container>
+    <BodyContainer>
       <div className="container grid lg:grid-cols-4 gap-6 pt-4 pb-16 items-start relative">
-        <div className="col-span-1 bg-white px-4 pt-4 pb-6 shadow rounded overflow-hidden absolute lg:static left-4 top-16 z-10 w-72 lg:w-full lg:block">
+        <div className="col-span-1 bg-white px-4 pt-4 pb-6 shadow rounded overflow-hidden absolute lg:static left-4 top-16 w-72 lg:w-full lg:block">
           <div className="divide-gray-200 divide-y space-y-5 relative">
             <div className="relative">
               <div className="lg:hidden text-gray-400 hover:text-primary text-lg absolute right-0 top-0 cursor-pointer">
-                <i className="fas fa-times"></i>
+                <IoClose/>
               </div>
               <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">
                 Categories
@@ -44,7 +47,7 @@ const ProductCatalog = () => {
 
             <div className="pt-4">
               <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">
-                Brands
+                Publisher
               </h3>
               <div className="space-y-2">
                 <div className="flex items-center">
@@ -69,7 +72,6 @@ const ProductCatalog = () => {
                   </label>
                   <div className="ml-auto text-gray-600 text-sm">(18)</div>
                 </div>
-
               </div>
             </div>
             <div className="pt-4">
@@ -203,7 +205,7 @@ const ProductCatalog = () => {
               <option>Latest product</option>
             </select>
             <div className="flex gap-2 ml-auto">
-              <div className="border border-primary w-10 h-9 flex items-center justify-center text-white bg-primary rounded cursor-pointer">
+              <div className="border border-primary w-10 h-9 flex items-center justify-center text-white bg-green-600 rounded cursor-pointer">
                 <i className="fas fa-th"></i>
               </div>
               <div className="border border-gray-300 w-10 h-9 flex items-center justify-center text-gray-600 rounded cursor-pointer">
@@ -216,7 +218,8 @@ const ProductCatalog = () => {
             <div className="group rounded bg-white shadow overflow-hidden">
               <div className="relative">
                 <Image
-                  fill
+                  width={400}
+                  height={600}
                   alt="listing"
                   src="/images/placeholder.png"
                   className="
@@ -230,20 +233,20 @@ const ProductCatalog = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
                   <a
                     href="view.html"
-                    className="text-white text-lg w-9 h-9 rounded-full bg-primary hover:bg-gray-800 transition flex items-center justify-center">
-                    <i className="fas fa-search"></i>
+                    className="text-white text-lg w-9 h-9 rounded-full bg-green-600 hover:bg-gray-800 transition flex items-center justify-center">
+                    <ImSearch />
                   </a>
                   <a
                     href="#"
-                    className="text-white text-lg w-9 h-9 rounded-full bg-primary hover:bg-gray-800 transition flex items-center justify-center">
-                    <i className="far fa-heart"></i>
+                    className="text-white text-lg w-9 h-9 rounded-full bg-green-600 hover:bg-gray-800 transition flex items-center justify-center">
+                    <AiFillHeart />
                   </a>
                 </div>
               </div>
               <div className="pt-4 pb-3 px-4">
                 <a href="view.html">
                   <h4 className="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
-                    Guyer chair
+                    NAME
                   </h4>
                 </a>
                 <div className="flex items-baseline mb-1 space-x-2">
@@ -255,19 +258,22 @@ const ProductCatalog = () => {
                   </p>
                 </div>
                 <div className="flex items-center">
-                  <div className="text-xs text-gray-500 ml-3">(150)</div>
+                  <div className="text-xs text-gray-500 ml-3">
+                    <ReactStars count={5} size={24} color2={"#ffd700"} />
+                    (150)
+                  </div>
                 </div>
               </div>
               <a
                 href="#"
-                className="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">
+                className="block w-full py-1 text-center text-white bg-green-600 border border-green-600 rounded-b hover:bg-transparent hover:text-green-600 transition">
                 Add to Cart
               </a>
             </div>
           </div>
         </div>
       </div>
-    </Container>
+    </BodyContainer>
   );
 };
 
