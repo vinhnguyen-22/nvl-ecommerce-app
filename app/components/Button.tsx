@@ -17,12 +17,12 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   outline,
   small,
-  icon:Icon
+  icon: Icon,
 }) => {
   return (
     <button
-    onClick={onClick}
-    disabled={disabled}
+      onClick={onClick}
+      disabled={disabled}
       className={`
         relative
         disabled:opacity-70
@@ -31,6 +31,8 @@ const Button: React.FC<ButtonProps> = ({
         hover:opacity-80
         transition
         w-full
+        font-bold
+        bg-gradient-to-r from-lime-300 to-green-500
         ${outline ? "bg-white" : "bg-green-600"} 
         ${outline ? "border-black" : "bg-green-600"} 
         ${outline ? "text-black" : "text-white"} 
@@ -40,16 +42,16 @@ const Button: React.FC<ButtonProps> = ({
         ${small ? "border-[1px]" : "border-2"} 
 
         `}>
-    {Icon && (
+      {Icon && (
         <Icon
-        size = {24}
-        className="
+          size={24}
+          className="
         absolute
         left-4
         top-3
         "
         />
-    )}
+      )}
       {label}
     </button>
   );

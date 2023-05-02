@@ -10,88 +10,40 @@ const Nav = () => {
   const router = useRouter();
 
   return (
-    <nav className="bg-gray-700 border rounded-lg">
-      <div className="md:flex md:flex-row md:justify-between text-center">
-        <div
-          onClick={() => router.push("/catalog/page")}
-          className="container flex ">
-          <div
-            className="
-          rounded-lg
-          px-8
-          py-4
-          bg-green-600
-          flex
-          flex-row
-          justify-center
-          -items-center 
-          cursor-pointer
-        ">
-            <span className="text-white">
-              <GoThreeBars />
-            </span>
-            <span
-              className="
-          capitalize 
-          ml-2
-          text-white
-          ">
-              Catalog
-            </span>
+    <div className="container mx-auto p-2 bg-gradient-to-r from-emerald-500 via-green-500 to-lime-500">
+      <div className="md:flex md:flex-row  text-center text-sm sm:text-base">
+        <div className="flex flex-row justify-center cursor-pointer">
+          <div className="font-extrabold text-transparent text-3xl text-white ">
+            <GoThreeBars />
           </div>
-
-          <div
-            className="
-        flex
-        items-center
-        justify-between
-        flex-grow
-        pl-12
-        ">
-            <div
-              className="
-          flex
-          items-center
-          space-x-6
-          capitalize
-          ">
-              <a
-                href="#"
-                className="
-              text-gray-200
-              hover:text-white
-              ">
-                Home
-              </a>
-              <a
-                href="#"
-                className="
-              text-gray-200
-              hover:text-white
-              ">
-                Shop
-              </a>
-              <a
-                href="#"
-                className="
-              text-gray-200
-              hover:text-white
-              ">
-                About us
-              </a>
-              <a
-                href="#"
-                className="
-              text-gray-200
-              hover:text-white
-              ">
-                Contact us
-              </a>
-            </div>
-          </div>
+          <h1 className="text-3xl text-white ml-2 font-bold hover:text-purple-600">
+            Catalog
+          </h1>
+        </div>
+        <div className="mt-2 font-bold">
+          <a
+            href="#"
+            className="text-white hover:text-purple-600 p-4 px-3 sm:px-4">
+            Home
+          </a>
+          <a
+            href="#"
+            className="text-white hover:text-purple-600 p-4 px-3 sm:px-4">
+            Shop
+          </a>
+          <a
+            href="#"
+            className="text-white hover:text-purple-600 p-4 px-3 sm:px-4">
+            Blog
+          </a>
+          <a
+            href="#"
+            className="text-white hover:text-purple-600 p-4 px-3 sm:px-4">
+            Contact
+          </a>
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 

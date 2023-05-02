@@ -47,7 +47,8 @@ const UserMenu = () => {
                 hover:bg-neutral-100
                 transition
                 cursor-pointer
-                text-green-600
+                bg-gradient-to-r from-lime-500  to-emerald-500
+                text-white
                 
                 ">
           <span
@@ -74,6 +75,7 @@ const UserMenu = () => {
           onClick={() => router.push("/user/wishlist")}
           className="
                 relative
+                m-2
                 hidden
                 md:block
                 text-3xl
@@ -81,11 +83,11 @@ const UserMenu = () => {
                 py-3
                 px-4
                 rounded-full
-                hover:bg-neutral-100
+                hover:bg-black
                 transition
                 cursor-pointer
-                text-green-600
-                
+                text-white
+                bg-gradient-to-r from-lime-500 via-green-500 to-emerald-500
                 ">
           <span
             className="

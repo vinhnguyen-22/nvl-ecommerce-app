@@ -61,8 +61,9 @@ const UserWishlist = () => {
               hover:scale-110
               hover:opactity-90
               transition
-            bg-green-600
-        ">
+              bg-gradient-to-r from-lime-300 to-green-500 
+              font-bold
+              ">
           Add all to cart
         </button>
       </div>

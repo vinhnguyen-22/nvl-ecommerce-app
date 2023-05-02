@@ -55,6 +55,7 @@ const CartPage = () => {
           text-lg
           hover:cursor-pointer
           mobile:m-5
+          ml-5
           ">
             <p>Items in your cart: 3</p>
             <p className="ml-5">Wishlist items: 3</p>
@@ -63,6 +64,7 @@ const CartPage = () => {
             onClick={() => router.push("/checkout/page")}
             className="
             text-white 
+            font-bold
               rounded-md 
               shadow-md 
               mt-[30px] 
@@ -70,7 +72,7 @@ const CartPage = () => {
               hover:scale-110
               hover:opactity-90
               transition
-            bg-green-600
+              bg-gradient-to-r from-lime-300 to-green-500
         ">
             Proceed to check out
           </button>
@@ -201,7 +203,7 @@ const CartPage = () => {
               transition
               px-3
               py-2
-              bg-red-600
+              bg-gradient-to-r from-red-500 via-pink-500 to-rose-500
               text-white
         ">
               <div className="text-white text-2xl mr-2 mb-2 block">

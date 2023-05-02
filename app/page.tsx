@@ -6,6 +6,7 @@ import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
 import ProductCard from "./product/ProductCard";
 import BodyContainer from "./components/BodyContainer";
+import HeroSection from "./components/HeroSection";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,6 +53,7 @@ export default function Home() {
   return (
     <ClientOnly>
       <BodyContainer>
+        <HeroSection />
         <div
           className="
                 mt-5

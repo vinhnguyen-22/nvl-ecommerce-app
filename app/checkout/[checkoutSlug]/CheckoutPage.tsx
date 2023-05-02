@@ -190,7 +190,8 @@ const CheckoutPage = () => {
             px-4
             py-3
             w-full
-            bg-green-600
+            bg-gradient-to-r from-lime-300 to-green-500
+            font-bold
             text-white
         ">
             Payment

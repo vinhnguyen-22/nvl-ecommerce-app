@@ -6,6 +6,7 @@ import RegisterModel from "./components/modals/RegisterModal";
 import Footer from "./components/Footer";
 import Home from "./page";
 import Container from "./components/Container";
+import HeroSection from "./components/HeroSection";
 
 export const metadata = {
   title: "NVL",
@@ -27,7 +28,7 @@ export default function RootLayout({
         <ClientOnly>
           <RegisterModel />
           <Navbar />
-          <div className="pt-28">{children}</div>
+          <div className="">{children}</div>
           <Footer />
         </ClientOnly>
       </body>

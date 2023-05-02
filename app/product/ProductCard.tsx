@@ -69,7 +69,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
     <div
       onClick={() => router.push("/product/page")}
       className="
-        col-span-1 cursor-pointer group bg-white px-3 py-3 mt-2 shadow-lg rounded-lg mb-2
+        col-span-1 cursor-pointer group bg-white px-3 py-3 mt-5 shadow-lg rounded-lg mb-2
         ">
       <div className="flex flex-col gap-2 w-full ">
         <div
@@ -103,7 +103,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <div className="flex flex-row items-center gap-1">
           <div className="font-semibold">$ Price</div>
         </div>
-        <Button small label="Add to cart" onClick={() => {}} />
+        <div className="font-bold">
+          <Button small label="Add to cart" onClick={() => {}} />
+        </div>
       </div>
     </div>
   );
