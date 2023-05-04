@@ -1,23 +1,23 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import Button from "@/app/components/Button";
-import React from "react";
-import Counter from "@/app/components/Counter";
-import { useRouter } from "next/navigation";
-import { AiFillDelete, AiFillHome } from "react-icons/ai";
-import { BiChevronRight } from "react-icons/bi";
-import BodyContainer from "@/app/components/BodyContainer";
-import { IoClose } from "react-icons/io5";
-import Closebutton from "@/app/components/Closebutton";
+import Image from 'next/image'
+import Button from '@/app/components/Button'
+import React from 'react'
+import Counter from '@/app/components/Counter'
+import { useRouter } from 'next/navigation'
+import { AiFillDelete, AiFillHome } from 'react-icons/ai'
+import { BiChevronRight } from 'react-icons/bi'
+import BodyContainer from '@/app/components/BodyContainer'
+import { IoClose } from 'react-icons/io5'
+import Closebutton from '@/app/components/Closebutton'
 
 const CartPage = () => {
-  const SummaryItemStyle = "SummaryItem flex justify-between mt-3 w-[100%] ";
+  const SummaryItemStyle = 'SummaryItem flex justify-between mt-3 w-[100%] '
   const ProductDivStyle =
-    "flex w-[100%] h-auto px-3 py-3 border-2 bg-white rounded-md border-gray-200 shadow items-center justify-between relative";
+    'lg:flex lg:flex-row md:flex md:flex-row  mobile:flex-col w-[100%] h-auto px-3 py-3 border-2 bg-white rounded-md border-gray-200 shadow items-center justify-between relative'
   const PriceQuantityStyle =
-    "flex-auto flex flex-col justify-center items-center mobile:mt-7 mobile:mb-7";
-  const router = useRouter();
+    'flex-auto flex flex-col justify-center items-center mobile:mt-7 mobile:mb-7'
+  const router = useRouter()
   return (
     <BodyContainer>
       <div className="p-3 ">
@@ -32,20 +32,8 @@ const CartPage = () => {
         </div>
 
         <div className="flex justify-center text-5xl mt-10">Cart</div>
-        <div className="flex lg:flex-col md:flex-row 2xl:flex-col sm:flex-row mobile:flex-row items-center justify-between ">
-          <button
-            className="
-            text-green-600  
-              rounded-md 
-              shadow-md 
-              mt-[30px] 
-              p-3
-              hover:scale-110
-              transition
-            bg-white
-              border-2
-              border-green-600  
-        ">
+        <div className="flex lg:flex-row md:flex-row 2xl:flex-col mobile:flex-col items-center justify-between ">
+          <button className="text-green-600 rounded-m shadow-m mt-[30px p-3  hover:scale-110  transitionbg-white  border-2  border-green-600">
             Continue shopping
           </button>
           <div
@@ -56,12 +44,13 @@ const CartPage = () => {
           hover:cursor-pointer
           mobile:m-5
           ml-5
-          ">
+          "
+          >
             <p>Items in your cart: 3</p>
             <p className="ml-5">Wishlist items: 3</p>
           </div>
           <button
-            onClick={() => router.push("/checkout/page")}
+            onClick={() => router.push('/checkout/page')}
             className="
             text-white 
             font-bold
@@ -73,12 +62,13 @@ const CartPage = () => {
               hover:opactity-90
               transition
               bg-gradient-to-r from-lime-300 to-green-500
-        ">
+        "
+          >
             Proceed to check out
           </button>
         </div>
 
-        <div className="flex 2xl:flex-row lg:flex-row md:flex-col sm:flex-col mt-7 rounded-lg ">
+        <div className="flex 2xl:flex-row lg:flex-row md:flex-col mobile:flex-col mt-7 rounded-lg ">
           <div className="flex flex-col flex-1 px-3 py-3 rounded-md">
             <div className={ProductDivStyle}>
               <div className="product flex pl-5 self-start">
@@ -165,10 +155,8 @@ const CartPage = () => {
                   <b>$69</b>
                 </div>
               </div>
-              <div>
-                <div className="absolute top-3 right-3 p-3 ">
-                  <Closebutton />
-                </div>
+              <div className="absolute top-3 right-3 p-3 flex items-end">
+                <Closebutton />
               </div>
             </div>
             <hr className="mt-7 mb-7" />
@@ -187,26 +175,13 @@ const CartPage = () => {
               <p className="ml-3">Shipping discount</p>
               <p className="mr-3">-$140</p>
             </div>
-            <div className={SummaryItemStyle + "text-3xl font-bold"}>
+            <div className={SummaryItemStyle + 'text-3xl font-bold'}>
               <p className="ml-3">Total</p>
               <p className="mr-3"> $140</p>
             </div>
-            <button
-              className="
-              flex
-              items-start
-              relative
-              disabled:opacity-70
-              disabled:cursor-not-allowed
-              rounded-lg
-              hover:scale-110 ease-in duration-300
-              px-3
-              py-2
-              bg-gradient-to-r from-red-500 via-pink-500 to-rose-500
-              text-white
-        ">
+            <button className="flex items-start relative disabled:opacity-70 disabled:cursor-not-allowed rounded-lg hover:scale-110 ease-in duration-300 px-3 py-2 bg-gradient-to-r from-red-500 via-pink-500 to-rose-500 text-white">
               <div className="text-white text-2xl mr-2 mb-2 block ">
-                <AiFillDelete />{" "}
+                <AiFillDelete />
               </div>
               Empty cart
             </button>
@@ -214,7 +189,7 @@ const CartPage = () => {
         </div>
       </div>
     </BodyContainer>
-  );
-};
+  )
+}
 
-export default CartPage;
+export default CartPage
