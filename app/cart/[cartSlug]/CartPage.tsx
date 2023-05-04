@@ -14,7 +14,7 @@ import Closebutton from "@/app/components/Closebutton";
 const CartPage = () => {
   const SummaryItemStyle = "SummaryItem flex justify-between mt-3 w-[100%] ";
   const ProductDivStyle =
-    "flex w-[100%] h-auto px-3 py-3 border-2 bg-white rounded-md border-gray-200 shadow items-center mobile:flex-col justify-between relative";
+    "flex w-[100%] h-auto px-3 py-3 border-2 bg-white rounded-md border-gray-200 shadow items-center justify-between relative";
   const PriceQuantityStyle =
     "flex-auto flex flex-col justify-center items-center mobile:mt-7 mobile:mb-7";
   const router = useRouter();
@@ -31,8 +31,8 @@ const CartPage = () => {
           <p className="text-gray-600 font-medium">Cart</p>
         </div>
 
-        <div className="flex justify-center text-5xl">Cart</div>
-        <div className="flex items-center justify-between  mobile:flex-col">
+        <div className="flex justify-center text-5xl mt-10">Cart</div>
+        <div className="flex lg:flex-col md:flex-row 2xl:flex-col sm:flex-row mobile:flex-row items-center justify-between ">
           <button
             className="
             text-green-600  
@@ -78,10 +78,10 @@ const CartPage = () => {
           </button>
         </div>
 
-        <div className="flex flex-row mt-7 rounded-lg mobile:flex-col ">
-          <div className="flex flex-col flex-1 px-3 py-3  rounded-md   ">
+        <div className="flex 2xl:flex-row lg:flex-row md:flex-col sm:flex-col mt-7 rounded-lg ">
+          <div className="flex flex-col flex-1 px-3 py-3 rounded-md">
             <div className={ProductDivStyle}>
-              <div className="product flex self-start">
+              <div className="product flex pl-5 self-start">
                 <Image
                   width={400}
                   height={600}
@@ -143,7 +143,7 @@ const CartPage = () => {
                   duration-300
                         "
                 />
-                <div className="description flex flex-col ml-5 h-auto justify-between">
+                <div className="disc flex items-start justify-between h-auto flex-col ml-6">
                   <div>
                     <b className="mr-2 ">ID:</b> 6969
                   </div>
@@ -166,14 +166,14 @@ const CartPage = () => {
                 </div>
               </div>
               <div>
-                <div className="absolute top-3 right-3 p-3">
+                <div className="absolute top-3 right-3 p-3 ">
                   <Closebutton />
                 </div>
               </div>
             </div>
             <hr className="mt-7 mb-7" />
           </div>
-          <div className="flex-[0.4] w-auto h-[40vh] border-2 border-gray-200 rounded-md shadow-lg flex flex-col items-center bg-white">
+          <div className="Summary flex-[0.4] flex flex-col items-center w-auto h-[40vh] bg-white border-green-600 rounded-md shadow-lg p-5 text-lg mobile:mb-6">
             <h2 className="text-[2rem]">SUMMARY</h2>
             <div className={SummaryItemStyle}>
               <p className="ml-3">Subtotal</p>
@@ -199,14 +199,13 @@ const CartPage = () => {
               disabled:opacity-70
               disabled:cursor-not-allowed
               rounded-lg
-              hover:opacity-80
-              transition
+              hover:scale-110 ease-in duration-300
               px-3
               py-2
               bg-gradient-to-r from-red-500 via-pink-500 to-rose-500
               text-white
         ">
-              <div className="text-white text-2xl mr-2 mb-2 block">
+              <div className="text-white text-2xl mr-2 mb-2 block ">
                 <AiFillDelete />{" "}
               </div>
               Empty cart

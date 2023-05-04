@@ -1,9 +1,9 @@
-'use client';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import { producttest } from '../page';
-import HeartButton from '../components/HeartButton';
-import Button from '../components/Button';
+"use client";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { producttest } from "../page";
+import HeartButton from "../components/HeartButton";
+import Button from "../components/Button";
 
 export interface ProductCardProps {
   id: number;
@@ -22,32 +22,32 @@ export interface ProductCardProps {
 export const data: ProductCardProps[] = [
   {
     id: 1,
-    name: 'first',
-    description: 'lorem ipsum',
+    name: "first",
+    description: "lorem ipsum",
     sku: 1,
-    imageUrl: '/images/placeholder.png',
+    imageUrl: "/images/placeholder.png",
     status: 0,
-    category: 'Bay',
+    category: "Bay",
   },
 
   {
     id: 2,
-    name: 'second',
-    description: 'lorem ipsum',
+    name: "second",
+    description: "lorem ipsum",
     sku: 3,
-    imageUrl: '/images/placeholder.png',
+    imageUrl: "/images/placeholder.png",
     status: 1,
-    category: 'Lac',
+    category: "Lac",
   },
 
   {
     id: 3,
-    name: 'last',
-    description: 'lorem ipsum',
+    name: "last",
+    description: "lorem ipsum",
     sku: 4,
-    imageUrl: '/images/placeholder.png',
+    imageUrl: "/images/placeholder.png",
     status: 1,
-    category: 'aaaaa',
+    category: "aaaaa",
   },
 ];
 
@@ -67,11 +67,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const router = useRouter();
   return (
     <div
-      onClick={() => router.push('/product/page')}
+      onClick={() => router.push("/product/page")}
       className="
-        col-span-1 cursor-pointer group bg-white px-3 py-3 mt-5 shadow-lg rounded-lg mb-2
-        "
-    >
+        col-span-1 cursor-pointer group bg-white px-3 py-3 shadow-lg rounded-lg mb-2
+        ">
       <div className="flex flex-col gap-2 w-full ">
         <div
           className="
@@ -80,8 +79,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 relative
                 overflow-hidden
                 rounded-xl
-                "
-        >
+                ">
           <Image
             height={300}
             width={200}
@@ -95,7 +93,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                         "
           />
           <div className="absolute top-3 right-3">
-            <HeartButton listingId={''} />
+            <HeartButton listingId={""} />
           </div>
         </div>
         <div className="font-semibold" text-lg>

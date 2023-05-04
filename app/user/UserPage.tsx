@@ -2,8 +2,8 @@
 
 const UserPage = () => {
   return (
-    <div className="container grid grid-cols-12 items-start gap-6 pt-4 pb-16">
-      <div className="col-span-12  grid grid-cols-3 gap-4">
+    <div className="container grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-12 items-start gap-6 pt-4 pb-16">
+      <div className="col-span-12 grid grid-cols-3 gap-4">
         <div className="shadow rounded bg-white px-4 pt-6 pb-8">
           <div className="flex justify-between items-center mb-4">
             <h3 className="font-bold text-gray-800 text-lg">

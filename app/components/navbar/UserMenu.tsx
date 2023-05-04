@@ -44,7 +44,9 @@ const UserMenu = () => {
                 py-3
                 px-4
                 rounded-full
-                hover:bg-neutral-100
+                hover:scale-110 
+                ease-in 
+                duration-300                
                 transition
                 cursor-pointer
                 bg-gradient-to-r from-lime-500  to-emerald-500
@@ -83,7 +85,9 @@ const UserMenu = () => {
                 py-3
                 px-4
                 rounded-full
-                hover:bg-black
+                hover:scale-110 
+                ease-in 
+                duration-300                
                 transition
                 cursor-pointer
                 text-white

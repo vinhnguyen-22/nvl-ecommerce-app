@@ -19,8 +19,17 @@ const CheckoutPage = () => {
         <p className="text-gray-600 font-medium">Checkout</p>
       </div>
 
-      <div className="container  gap-6 grid grid-cols-12 items-start ">
-        <div className="col-span-8 gap 2 mb-5">
+      <div
+        className="
+        container 
+        gap-6 
+        grid 
+        sm:grid-cols-1
+        md:grid-cols-1
+        lg:grid-cols-12
+        2xl:grid-cols-12
+        items-start">
+        <div className="col-span-8 gap-2 mb-5 sm:m-2 md:m-2 mobile:m-2">
           <div className="border border-green-300 p-4 rounded bg-white shadow-lg">
             <h3 className="text-lg font-medium capitalize mb-4 ">
               Shipping Address

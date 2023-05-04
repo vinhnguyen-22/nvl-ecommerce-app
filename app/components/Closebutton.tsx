@@ -1,17 +1,15 @@
-'use client';
+"use client";
 
-import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose } from "react-icons/ai";
 
 const HeartButton = () => {
   return (
     <div
       className="
         relative
-        hove:opacity-80
-        transition
+        hover:scale-110 ease-in duration-300
         cursor-pointer
-        "
-    >
+        ">
       <AiOutlineClose
         size={28}
         className="

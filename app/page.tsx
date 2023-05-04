@@ -8,6 +8,9 @@ import ProductCard from './product/ProductCard';
 import BodyContainer from './components/BodyContainer';
 import HeroSection from './components/HeroSection';
 import RootLayout from './layout';
+import FeaturedProducts from './components/FeaturedProducts';
+import NewsLetter from './components/NewsLetter';
+import Features from './components/Features';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -55,23 +58,9 @@ export default function Home() {
     <ClientOnly>
       <BodyContainer>
         <HeroSection />
-        <div
-          className="
-                mt-5
-                pt-24
-                grid
-                grid-cols-2
-                sm:grid-cols-2
-                md:grid-cols-3
-                lg:grid-cols-5
-                2xl:grid-cols-6
-                gap-8
-                "
-        >
-          {producttest.map((producttest: any) => {
-            return <ProductCard key={producttest.id} data={producttest} />;
-          })}
-        </div>
+        <Features/>
+        <FeaturedProducts/>
+        <NewsLetter/>
       </BodyContainer>
     </ClientOnly>
   );
