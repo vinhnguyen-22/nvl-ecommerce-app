@@ -9,7 +9,7 @@ import VerticalBanner from './VerticalBanner'
 
 const Promotion = () => {
   const ProductDivStyle =
-    'flex lg:flex lg:flex-row md:flex md:flex-row mobile:flex-col w-[100%] p-3 h-auto border-2 bg-white rounded-md items-center justify-between relative'
+    'flex lg:flex lg:flex-row md:flex md:flex-row mobile:flex-col w-[100%] p-3  border-2 bg-white rounded-md items-center justify-between relative'
   const SaleTextStyle =
     'text-xl font-extrabold leading-relaxed text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-600'
   return (
@@ -79,8 +79,8 @@ const Promotion = () => {
         </div>
       </div>
       <div className="col-span-3 h-full">
-        <div className=" flex-[0.4] flex flex-col items-center rounded-md mobile:mb-6 gap-2 ">
-          <div className="flex flex-row w-[100%] h-auto bg-white rounded-md items-center justify-between relative p-3 border-2">
+        <div className=" flex-[0.4] flex flex-col items-center rounded-md mobile:mb-6 gap-2  h-full justify-between">
+          <div className="flex flex-row w-[100%]  bg-white rounded-md items-center justify-between relative p-3 border-2">
             <div className="lg:w-2/5 w-full lg:flex lg:flex-row ">
               <Image
                 width={150}
@@ -110,7 +110,7 @@ const Promotion = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col w-[100%] h-auto bg-white rounded-md items-center justify-center relative p-3 border-2">
+          <div className="flex flex-col w-[100%]  bg-white rounded-md items-center justify-center relative p-3 border-2">
             <div className=" w-full rounded-lg text-gray-800 ">
               <h3 className="text-xs font-extrabold ">Classical literature</h3>
               <p className={SaleTextStyle}>INTERNATIONAL BESTSELLER</p>
@@ -136,7 +136,7 @@ const Promotion = () => {
               />
             </div>
           </div>
-          <div className="flex flex-row w-[100%] h-auto bg-white rounded-md items-between justify-between relative p-3 border-2">
+          <div className="flex flex-row w-[100%]  bg-white rounded-md items-between justify-between relative p-3 border-2">
             <div className=" w-full rounded-lg text-gray-800 ">
               <h3 className="text-xs font-extrabold ">Classical literature</h3>
               <p className={SaleTextStyle}>INTERNATIONAL BESTSELLER</p>
