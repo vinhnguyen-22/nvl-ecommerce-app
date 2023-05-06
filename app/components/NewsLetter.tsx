@@ -1,12 +1,27 @@
-"use client";
+'use client'
 
-import React from "react";
-import Image from "next/image";
+import React from 'react'
+import Image from 'next/image'
 
 const NewsLetter = () => {
   return (
     <div className="rounded-lg shadow-lg my-20 flex flex-row">
-      <div className="lg:w-3/5 w-full bg-gradient-to-r from-black to-purple-900 lg:from-black lg:via-purple-900 lg:to-transparent rounded-lg text-gray-100 p-12">
+      <div className="lg:w-2/5 w-full lg:flex lg:flex-row hidden">
+        <Image
+          width={1800}
+          height={1600}
+          alt="listing"
+          src="/images/hero.png"
+          className="
+                  rounded-lg
+                  shadow-lg
+                  hover:scale-110
+                  ease-in
+                  duration-300
+                  "
+        />
+      </div>
+      <div className="flex lg:w-3/5 w-full bg-gradient-to-r from-purple-900 to-black lg:from-transparent lg:via-purple-900 lg:to-black rounded-lg text-gray-100 p-12 justify-end">
         <div className="lg:w-1/2">
           <h3 className="text-2xl font-extrabold mb-4">
             Subscribe to get our offers first
@@ -23,29 +38,15 @@ const NewsLetter = () => {
             />
             <button
               type="submit"
-              className="bg-red-600 py-3 rounded-lg w-full hover:scale-110 ease-in duration-300">
+              className="bg-red-600 py-3 rounded-lg w-full hover:scale-110 ease-in duration-300"
+            >
               Subscribe
             </button>
           </div>
         </div>
       </div>
-      <div className="lg:w-2/5 w-full lg:flex lg:flex-row hidden">
-        <Image
-          width={1800}
-          height={1600}
-          alt="listing"
-          src="/images/hero.png"
-          className="
-                  rounded-lg
-                  shadow-lg
-                  hover:scale-110
-                  ease-in
-                  duration-300
-                  "
-        />
-      </div>
     </div>
-  );
-};
+  )
+}
 
-export default NewsLetter;
+export default NewsLetter

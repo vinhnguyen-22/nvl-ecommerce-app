@@ -11,6 +11,8 @@ import RootLayout from './layout';
 import FeaturedProducts from './components/FeaturedProducts';
 import NewsLetter from './components/NewsLetter';
 import Features from './components/Features';
+import Promotion from './components/Promotion';
+import Promotion2 from './components/Promotion2';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -58,6 +60,7 @@ export default function Home() {
     <ClientOnly>
       <BodyContainer>
         <HeroSection />
+        <Promotion2/>
         <Features/>
         <FeaturedProducts/>
         <NewsLetter/>

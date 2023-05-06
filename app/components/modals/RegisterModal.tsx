@@ -1,7 +1,9 @@
 "use client";
 
 const RegisterModel = () => {
-  return <div></div>;
+  return <div>
+    
+  </div>;
 };
 
 export default RegisterModel;

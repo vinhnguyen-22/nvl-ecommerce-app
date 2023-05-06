@@ -1,16 +1,16 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-import { AiFillHome, AiOutlineMenu } from "react-icons/ai";
-import { BiChevronRight, BiLogOut } from "react-icons/bi";
-import { BsFillCreditCard2BackFill } from "react-icons/bs";
-import { FaAddressCard, FaBoxOpen, FaHeart } from "react-icons/fa";
-import { useRouter } from "next/navigation";
-import BodyContainer from "../components/BodyContainer";
-import Sidebar from "../components/sidebar/Sidebar";
+'use client'
+import React from 'react'
+import Image from 'next/image'
+import { AiFillHome, AiOutlineMenu } from 'react-icons/ai'
+import { BiChevronRight, BiLogOut } from 'react-icons/bi'
+import { BsFillCreditCard2BackFill } from 'react-icons/bs'
+import { FaAddressCard, FaBoxOpen, FaHeart } from 'react-icons/fa'
+import { useRouter } from 'next/navigation'
+import BodyContainer from '../components/BodyContainer'
+import Sidebar from '../components/sidebar/Sidebar'
 
 const UserLayout = ({ children }: any) => {
-  const router = useRouter();
+  const router = useRouter()
   return (
     <BodyContainer>
       <div className="container py-4 flex items-center gap-3">
@@ -29,14 +29,14 @@ const UserLayout = ({ children }: any) => {
           </span>
         </button>
       </div>
-      <div className="container grid grid-cols-12 items-start gap-6 pt-4 pb-16">
+      <div className="grid grid-cols-12 items-start gap-6 pt-4 pb-16">
         <div className="col-span-3 lg:left-0">
-          <Sidebar/>
+          <Sidebar />
         </div>
         <div className="col-span-9">{children}</div>
       </div>
     </BodyContainer>
-  );
-};
+  )
+}
 
-export default UserLayout;
+export default UserLayout

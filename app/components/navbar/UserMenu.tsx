@@ -39,10 +39,10 @@ const UserMenu = () => {
                 relative
                 hidden
                 md:block
-                text-3xl
+                text-xl
                 font-semibold
-                py-3
-                px-4
+                py-2
+                px-3
                 rounded-full
                 hover:scale-110 
                 ease-in 
@@ -58,12 +58,12 @@ const UserMenu = () => {
             absolute
             right-0
             -top-1
-            w-5
-            h-5
+            w-4
+            h-4
             flex
             items-center
             justify-center
-            text-[13px]
+            text-[10px]
             bg-red-600
             rounded-full
             place-items-center
@@ -80,10 +80,10 @@ const UserMenu = () => {
                 m-2
                 hidden
                 md:block
-                text-3xl
+                text-xl
                 font-semibold
-                py-3
-                px-4
+                py-2
+                px-3
                 rounded-full
                 hover:scale-110 
                 ease-in 
@@ -98,12 +98,12 @@ const UserMenu = () => {
           absolute
           right-0
           -top-1
-          w-5
-          h-5
+          w-4
+          h-4
           flex
           items-center
           justify-center
-          text-[13px]
+          text-[10px]
           bg-red-600
           rounded-full
           place-items-center

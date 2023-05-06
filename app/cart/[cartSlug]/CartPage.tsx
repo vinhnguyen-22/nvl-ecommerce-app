@@ -32,7 +32,7 @@ const CartPage = () => {
         </div>
 
         <div className="flex justify-center text-5xl mt-10">Cart</div>
-        <div className="flex lg:flex-row md:flex-row 2xl:flex-col mobile:flex-col items-center justify-between ">
+        <div className="flex lg:flex-row md:flex-row 2xl:flex-row mobile:flex-col items-center justify-between ">
           <button className="text-green-600 rounded-m shadow-m mt-[30px p-3  hover:scale-110  transitionbg-white  border-2  border-green-600">
             Continue shopping
           </button>
