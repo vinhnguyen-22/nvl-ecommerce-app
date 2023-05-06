@@ -60,7 +60,7 @@ export default function Home() {
     <ClientOnly>
       <BodyContainer>
         <HeroSection />
-        <Promotion2/>
+        <Promotion/>
         <Features/>
         <FeaturedProducts/>
         <NewsLetter/>
