@@ -1,34 +1,84 @@
 /** @type {import('tailwindcss').Config} */
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variableName}), ${opacityValue})`;
+    }
+    return `rgba(var(${variableName}))`;
+  };
+}
+
 module.exports = {
+  darkMode: 'class',
+  mode: 'jit',
   content: [
-    './ src/app/**/*.{js,ts,jsx,tsx}',
+    './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    screens: {
-      mobile: '425px',
-
-      sm: '640px',
-
-      // => @media (min-width: 640px) { ... }
-
-      md: '768px',
-      // => @media (min-width: 768px) { ... }
-
-      lg: '1024px',
-      // => @media (min-width: 1024px) { ... }
-
-      xl: '1280px',
-      // => @media (min-width: 1280px) { ... }
-
-      '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
-    },
     extend: {
       colors: {
-        glass: 'rgba(255,255,255,0.25)',
-        brown: 'rgb(30, 30, 17);',
+        palette: {
+          primary: withOpacity('--color-primary'),
+          secondary: withOpacity('--color-secondary'),
+        },
+      },
+      textColor: {
+        palette: {
+          base: withOpacity('--color-text-base'),
+          mute: withOpacity('--color-text-muted'),
+          side: withOpacity('--color-text-side'),
+        },
+      },
+      backgroundColor: {
+        palette: {
+          fill: withOpacity('--color-bg'),
+          card: withOpacity('--color-bg-side'),
+          dark: withOpacity('--color-bg-dark'),
+          digitalCategory: 'var(--digital-category-bgc)',
+          fashionCategory: 'var(--fashion-category-bgc)',
+          beautyCategory: 'var( --beauty-category-bgc)',
+          sportCategory: 'var(--sport-category-bgc)',
+          houseCategory: 'var(--house-category-bgc)',
+          toyCategory: 'var(--toy-category-bgc)',
+          stationeryCategory: 'var(--stationery-category-bgc)',
+        },
+      },
+      fontFamily: {
+        farsi: "'iranyekan', 'IRANSans', 'Tahoma'",
+        english: "'Poppins', 'Roboto', 'sans-serif'",
+      },
+      keyframes: {
+        sidenavLTR: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0px)' },
+        },
+        sidenavRTL: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0px)' },
+        },
+        fade: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+        dropDown: {
+          '0%': { opacity: 0, transform: 'scaleY(0)' },
+          '100%': { opacity: 1, transform: 'scaleY(1)' },
+        },
+      },
+      animation: {
+        sidenavLTREntering: 'sidenavLTR 0.3s ease-in-out forwards',
+        sidenavRTLEntering: 'sidenavRTL 0.3s ease-in-out forwards',
+        sidenavLTRExit: 'sidenavLTR 0.3s ease-in-out reverse forwards',
+        sidenavRTLExit: 'sidenavRTL 0.3s ease-in-out reverse forwards',
+        fadeEntering: 'fade 0.3s forwards',
+        fadeExit: 'fade 0.3s reverse forwards',
+        dropDown: 'dropDown 0.3s forwards',
+        dropDownExit: 'dropDown 0.3s reverse forwards',
+      },
+      backgroundImage: {
+        offersBG: "url('/images/carouselBox-bg/offersbg.webp')",
       },
     },
   },

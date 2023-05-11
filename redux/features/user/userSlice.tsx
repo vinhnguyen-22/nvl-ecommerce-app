@@ -1,42 +1,25 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import Cookies from 'js-cookie';
+import { IUser, IUserInfo } from '@/lib/types/user';
 
-export const fetchUsers = createAsyncThunk(
-  'users/getAllUsers',
-  async (thunkApi) => {
-    const response = await fetch(
-      'https://jsonplaceholder.typicode.com/users?_limit=5',
-    )
-    const data = await response.json()
-    return data
-  },
-)
+const initialState: IUserInfo = {
+  userInformation: Cookies.get('userInfo')
+    ? JSON.parse(Cookies.get('userInfo')!)
+    : null,
+};
 
-const initialState = {
-  entities: [],
-  loading: false,
-  value: 10,
-} as any
-
-const userSlice = createSlice({
-  name: 'users',
+const userInfoSlice = createSlice({
+  name: 'userInfo',
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value++
+    userLogin(state, action: PayloadAction<IUser>) {
+      state.userInformation = action.payload;
+    },
+    userLogout(state) {
+      state.userInformation = null;
     },
   },
-  extraReducers: (builder) => {
-    builder.addCase(fetchUsers.fulfilled, (state, action) => {
-      state.loading = false
-      state.entities.push(...action.payload)
-    })
+});
+export const userInfoActions = userInfoSlice.actions;
 
-    builder.addCase(fetchUsers.pending, (state, action) => {
-      state.loading = true
-    })
-  },
-})
-
-export const { increment } = userSlice.actions
-
-export default userSlice.reducer
+export default userInfoSlice.reducer;
