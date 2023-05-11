@@ -12,6 +12,7 @@ import { IProduct } from '@/lib/types/products';
 import { newestProductsActions } from '@/redux/features/product/newestProductSlice';
 import { specialOfferProductsActions } from '@/redux/features/product/specialOfferProductsSlice';
 import { newestProductsFn } from '@/utilities/sortByTimeStamp';
+import ClientOnly from '@/components/ClientOnly/ClientOnly';
 
 const Offers = dynamic(() => import('@/components/Offers/Offers'));
 const Category = dynamic(() => import('@/components/category/Category'));
@@ -41,13 +42,15 @@ const HomePage = ({ searchParams }: any) => {
   }, [dispatch]);
   return (
     <div>
-      <Carousel />
-      <Benefits />
-      <Offers />
-      <Category />
-      <Newest />
-      <Banners />
-      <Brands />
+      <ClientOnly>
+        <Carousel />
+        <Benefits />
+        <Offers />
+        <Category />
+        <Newest />
+        <Banners />
+        <Brands />
+      </ClientOnly>
     </div>
   );
 };
