@@ -1,3 +1,5 @@
+'use client';
+
 import type { NextPage } from 'next';
 import { GetStaticProps, GetStaticPaths } from 'next';
 // import { client } from '@/lib/client';

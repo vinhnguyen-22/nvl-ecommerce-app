@@ -1,3 +1,4 @@
+'use client';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import ProductDetails from '@/components/productDetails';
