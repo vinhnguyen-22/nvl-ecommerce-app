@@ -11,7 +11,8 @@ import { getError } from '@/utilities/error';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { userInfoActions } from '@/redux/features/user/userSlice';
-const Login: NextPage = () => {
+import { signIn } from 'next-auth/react';
+const Login = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [errorMessage, setErrorMessage] = useState('');
@@ -23,16 +24,40 @@ const Login: NextPage = () => {
       router.push('/');
     }
   }, [userInfo, router]);
+
+  // async function LoginHandler(user: IUser) {
+  //   const { email, password } = user;
+  //   try {
+  //     const { data } = await axios.post('/api/users/login', {
+  //       email,
+  //       password,
+  //     });
+  //     dispatch(userInfoActions.userLogin(data));
+  //     jsCookie.set('userInfo', JSON.stringify(data));
+  //     router.push('/');
+  //   } catch (err: any) {
+  //     setErrorMessage(getError(err));
+  //     console.log(getError(err));
+  //   }
+  // }
+
   async function LoginHandler(user: IUser) {
     const { email, password } = user;
     try {
-      const { data } = await axios.post('/api/users/login', {
-        email,
-        password,
+      const result = await signIn('credentials', {
+        email: email,
+        password: password,
+        redirect: true,
+        callbackUrl: '/',
       });
-      dispatch(userInfoActions.userLogin(data));
-      jsCookie.set('userInfo', JSON.stringify(data));
-      router.push('/');
+
+      // const { data } = await axios.post('/api/users/login', {
+      //   username: email,
+      //   password,
+      // });
+      // dispatch(userInfoActions.userLogin(data));
+      // jsCookie.set('userInfo', JSON.stringify(data));
+      // router.push('/');
     } catch (err: any) {
       setErrorMessage(getError(err));
       console.log(getError(err));

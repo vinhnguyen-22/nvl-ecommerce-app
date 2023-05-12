@@ -1,10 +1,10 @@
 export const products = [
   {
     image: 'https://example.com/product-image.jpg',
-    name: 'Example Product',
+    name: 'Example Product 1',
     slug: {
       _type: 'slug',
-      current: 'example-product',
+      current: 'example-product1',
     },
     price: 999,
     discount: 100,
@@ -41,10 +41,10 @@ export const products = [
   },
   {
     image: 'https://example.com/product-image.jpg',
-    name: 'Example Product',
+    name: 'Example Product 2',
     slug: {
       _type: 'slug',
-      current: 'example-product',
+      current: 'example-product2',
     },
     price: 999,
     discount: 100,
@@ -81,10 +81,10 @@ export const products = [
   },
   {
     image: 'https://example.com/product-image.jpg',
-    name: 'Example Product',
+    name: 'Example Product 3',
     slug: {
       _type: 'slug',
-      current: 'example-product',
+      current: 'example-product7',
     },
     price: 999,
     discount: 100,
@@ -121,10 +121,10 @@ export const products = [
   },
   {
     image: 'https://example.com/product-image.jpg',
-    name: 'Example Product',
+    name: 'Example Product 4',
     slug: {
       _type: 'slug',
-      current: 'example-product',
+      current: 'example-product3',
     },
     price: 999,
     discount: 100,
@@ -161,11 +161,11 @@ export const products = [
   },
 ];
 export const product = {
-  image: 'https://example.com/product-image.jpg',
-  name: 'Example Product',
+  image: ['https://example.com/product-image.jpg'],
+  name: 'Example Product 5',
   slug: {
     _type: 'slug',
-    current: 'example-product',
+    current: 'example-product4',
   },
   price: 999,
   discount: 100,

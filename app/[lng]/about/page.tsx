@@ -4,7 +4,7 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import { RiDoubleQuotesL, RiDoubleQuotesR } from 'react-icons/ri';
 
-const About: NextPage = () => {
+const About = () => {
   // const { t, locale } = useLanguage();
   // const StartQuot = locale === 'en' ? RiDoubleQuotesL : RiDoubleQuotesR;
   // const EndQuot = locale === 'en' ? RiDoubleQuotesR : RiDoubleQuotesL;

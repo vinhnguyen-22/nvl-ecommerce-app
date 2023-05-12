@@ -8,6 +8,7 @@ import { IProduct } from '@/lib/types/products';
 import { product, products } from '@/mock/products';
 
 const productDetailsPage = () => {
+  console.log(product);
   return (
     <div>
       <ProductDetails product={product} products={products} />

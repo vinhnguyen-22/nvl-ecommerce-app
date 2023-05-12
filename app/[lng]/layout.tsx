@@ -6,9 +6,7 @@ import './globals.css';
 import NextNProgress from 'nextjs-progressbar';
 import { dir } from 'i18next';
 import { Nunito } from 'next/font/google';
-
 const languages = ['en', 'vi'];
-
 import { GlobalProvider } from './GlobalProvider';
 import ClientOnly from '@/components/ClientOnly/ClientOnly';
 
@@ -32,16 +30,19 @@ export default function RootLayout({
   return (
     <html lang={lng} dir={'ltr'}>
       <head />
-      <body className={font.className}>
+      <body
+        className={font.className + ' px-5 xl:px-16'}
+        suppressHydrationWarning={true}
+      >
         <ClientOnly>
-        <GlobalProvider>
-          <div className="flex flex-col min-h-[100vh]">
-            <NextNProgress height={7} />
-            <Header />
-            {children}
-            <Footer />
-          </div>
-        </GlobalProvider>
+          <GlobalProvider>
+            <div className="flex flex-col min-h-[100vh]">
+              <NextNProgress height={7} />
+              <Header />
+              <main className="flex-grow md:mt-40">{children}</main>
+              <Footer />
+            </div>
+          </GlobalProvider>
         </ClientOnly>
       </body>
     </html>

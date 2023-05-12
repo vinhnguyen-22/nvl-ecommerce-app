@@ -8,9 +8,7 @@ import { IProduct } from '@/lib/types/products';
 import ProductList from '@/components/productList/ProductList';
 import { newestProductsFn } from '@/utilities/sortByTimeStamp';
 import { products } from '@/mock/products';
-const NewestProduct: NextPage<{
-  products: IProduct[];
-}> = ({ products }) => {
+const NewestProduct = ({ products }: { products: IProduct[] }) => {
   const [productsList, setProductsList] = useState<IProduct[] | []>([]);
 
   useEffect(() => {
@@ -26,13 +24,13 @@ const NewestProduct: NextPage<{
 
 export default NewestProduct;
 
-export const getStaticProps: GetStaticProps = async () => {
-  const productQuery = `*[_type=='product' && slug.current != "asus-zenbook-14-intel-core-i7-16gb-ram-512gb-ssd-14-ips-laptop"]`;
-  // const products = await client.fetch(productQuery);
+// export const getStaticProps: GetStaticProps = async () => {
+//   const productQuery = `*[_type=='product' && slug.current != "asus-zenbook-14-intel-core-i7-16gb-ram-512gb-ssd-14-ips-laptop"]`;
+//   // const products = await client.fetch(productQuery);
 
-  return {
-    props: {
-      products: products,
-    },
-  };
-};
+//   return {
+//     props: {
+//       products: products,
+//     },
+//   };
+// };

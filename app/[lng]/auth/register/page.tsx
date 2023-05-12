@@ -7,16 +7,17 @@ import EnteringBox from '@/components/entering/EnteringBox';
 import { IUser } from '@/lib/types/user';
 import axios from 'axios';
 import { getError } from '@/utilities/error';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { IUserInfoRootState } from '@/lib/types/user';
 import { userInfoActions } from '@/redux/features/user/userSlice';
 
-const SignUp: NextPage = () => {
+const SignUp = () => {
   const dispatch = useDispatch();
   const router = useRouter();
+  const searchParam = useSearchParams();
   const [errorMessage, setErrorMessage] = useState('');
-  const { redirect } = router.query;
+  const { redirect }: any = searchParam;
   const userInfo = useSelector(
     (state: IUserInfoRootState) => state.userInfo.userInformation,
   );

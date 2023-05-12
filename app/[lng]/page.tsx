@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 import { useDispatch } from 'react-redux';
 // import { client } from '@/lib/client';
-import { products } from '../mock/products';
+import { products } from '../../mock/products';
 import Benefits from '@/components/Benefits';
 import Carousel from '@/components/carousel';
 import { IProduct } from '@/lib/types/products';
@@ -41,17 +41,15 @@ const HomePage = ({ searchParams }: any) => {
     dispatch(newestProductsActions.addProducts(sortedProductsByTimeStamp));
   }, [dispatch]);
   return (
-    <div>
-      <ClientOnly>
-        <Carousel />
-        <Benefits />
-        <Offers />
-        <Category />
-        <Newest />
-        <Banners />
-        <Brands />
-      </ClientOnly>
-    </div>
+    <ClientOnly>
+      <Carousel />
+      <Benefits />
+      <Offers />
+      <Category />
+      <Newest />
+      <Banners />
+      <Brands />
+    </ClientOnly>
   );
 };
 

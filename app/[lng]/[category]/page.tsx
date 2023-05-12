@@ -7,9 +7,7 @@ import ProductList from '@/components/productList/ProductList';
 import { ICategoryPathsParams } from '@/lib/types/pagePathsParams';
 import { products } from '@/mock/products';
 
-const categoryPage: NextPage<{
-  products: IProduct[];
-}> = ({ products }) => {
+const categoryPage = ({ products }: { products: IProduct[] }) => {
   return (
     <div>
       <ProductList productList={products} />
@@ -35,14 +33,14 @@ export default categoryPage;
 //   };
 // };
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const category = context.params?.category;
-  const productQuery = `*[_type=='product'&& category[0]=="${category}"]`;
-  // const products = await client.fetch(productQuery);
+// export const getStaticProps: GetStaticProps = async (context) => {
+//   const category = context.params?.category;
+//   const productQuery = `*[_type=='product'&& category[0]=="${category}"]`;
+//   // const products = await client.fetch(productQuery);
 
-  return {
-    props: {
-      products: products,
-    },
-  };
-};
+//   return {
+//     props: {
+//       products: products,
+//     },
+//   };
+// };

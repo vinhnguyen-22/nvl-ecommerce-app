@@ -6,9 +6,7 @@ import { IProduct } from '@/lib/types/products';
 import ProductList from '@/components/productList/ProductList';
 import { products } from '@/mock/products';
 
-const offers: NextPage<{
-  products: IProduct[];
-}> = ({ products }) => {
+const offers = () => {
   return (
     <div>
       <ProductList productList={products} />
