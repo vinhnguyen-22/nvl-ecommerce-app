@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { useRouter } from 'next/navigation'
-import Sidebar from '@/components/sidebar/sidebar'
+import Sidebar from '@/components/sidebar/Sidebar'
 
 
 const UserLayout = ({ children }: any) => {

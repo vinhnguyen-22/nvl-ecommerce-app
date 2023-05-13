@@ -13,6 +13,7 @@ import { newestProductsActions } from '@/redux/features/product/newestProductSli
 import { specialOfferProductsActions } from '@/redux/features/product/specialOfferProductsSlice';
 import { newestProductsFn } from '@/utilities/sortByTimeStamp';
 import ClientOnly from '@/components/ClientOnly/ClientOnly';
+import Promotion from '@/components/promotion/Promotion';
 
 const Offers = dynamic(() => import('@/components/Offers/Offers'));
 const Category = dynamic(() => import('@/components/category/Category'));
@@ -44,6 +45,7 @@ const HomePage = ({ searchParams }: any) => {
     <ClientOnly>
       <Carousel />
       <Benefits />
+      <Promotion/>
       <Offers />
       <Category />
       <Newest />
