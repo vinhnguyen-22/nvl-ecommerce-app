@@ -3,10 +3,7 @@
 import OrderHistory from '@/components/order/OrderHistory';
 
 const UserOrderPage = () => {
-
-  return (
-      <OrderHistory/>
-  );
+  return <OrderHistory />;
 };
 
 export default UserOrderPage;
