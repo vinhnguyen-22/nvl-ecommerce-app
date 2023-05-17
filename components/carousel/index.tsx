@@ -1,11 +1,9 @@
-import React from "react";
-import Slider from "react-slick";
-import Slide from "./Slide";
-import { sliderContent } from "../../mock/slider";
-import { NextArrow, PrevArrow } from "./Arrows";
-import { HiOutlineChevronRight, HiOutlineChevronLeft } from "react-icons/hi";
-
-const Carousel = () => {
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
+import Slider from 'react-slick';
+import { NextArrow, PrevArrow } from './Arrows';
+import Slide from './Slide';
+import { ISlide } from '@/redux/features/slides/service/slides.api';
+const Carousel = ({ slides }: any) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -14,7 +12,7 @@ const Carousel = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
-    cssEase: "linear",
+    cssEase: 'linear',
     nextArrow: <NextArrow to="next" />,
     prevArrow: <PrevArrow to="prev" />,
     appendDots: (dots: string) => (
@@ -27,8 +25,8 @@ const Carousel = () => {
   return (
     <div className="relative">
       <Slider {...settings}>
-        {sliderContent.map((slideContent) => {
-          return <Slide key={slideContent.ID} {...slideContent} />;
+        {slides.map((slide: ISlide) => {
+          return <Slide key={slide.id} {...slide} />;
         })}
       </Slider>
       <>

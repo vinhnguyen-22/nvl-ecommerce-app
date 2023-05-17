@@ -41,6 +41,7 @@
     "react-transition-group": "^4.4.5",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.10",
+    "swr": "^2.1.5",
     "typescript": "5.0.3",
     "url-loader": "^4.1.1"
   },

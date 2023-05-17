@@ -1,7 +1,7 @@
 'use client';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useDispatch } from 'react-redux';
 // import { client } from '@/lib/client';
@@ -14,6 +14,11 @@ import { specialOfferProductsActions } from '@/redux/features/product/specialOff
 import { newestProductsFn } from '@/utilities/sortByTimeStamp';
 import ClientOnly from '@/components/ClientOnly/ClientOnly';
 import Promotion from '@/components/promotion/Promotion';
+import { useSWRConfig } from 'swr';
+import useSWR from 'swr';
+import { toast } from 'react-toastify';
+import { getAllSlideFn } from '@/redux/features/slides/service/slides.api';
+import { getAllProductCategoriesFn } from '@/redux/features/category/service/category.api';
 
 const Offers = dynamic(() => import('@/components/Offers/Offers'));
 const Category = dynamic(() => import('@/components/category/Category'));
@@ -33,6 +38,24 @@ const HomePage = ({ searchParams }: any) => {
     'price[lte]': searchParams.max,
     'ratings[gte]': searchParams.ratings,
   };
+
+  const { mutate } = useSWRConfig();
+  const { data: slides, isLoading: slideLoading } = useSWR(
+    '/getAllSlides',
+    getAllSlideFn,
+  );
+  const { data: categories, isLoading: categoriesLoading } = useSWR(
+    '/getAllCategories',
+    getAllProductCategoriesFn,
+  );
+
+  // if (slide?.success !== true) toast.error(slide?.message);
+  // const { data: productData, isLoading: productLoading } = useSWR(
+  //   '/gettingAllProductsFOrAdmin',
+  //   get_all_products,
+  // );
+  // if (productData?.success !== true) toast.error(productData?.message);
+
   useEffect(() => {
     // add products to offers list
     const offersProducts = products.filter((item) => item.discount);
@@ -41,11 +64,12 @@ const HomePage = ({ searchParams }: any) => {
     const sortedProductsByTimeStamp = newestProductsFn(products);
     dispatch(newestProductsActions.addProducts(sortedProductsByTimeStamp));
   }, [dispatch]);
+
   return (
     <ClientOnly>
-      <Carousel />
+      {!slideLoading && <Carousel slides={slides} />}
       <Benefits />
-      <Promotion/>
+      <Promotion />
       <Offers />
       <Category />
       <Newest />

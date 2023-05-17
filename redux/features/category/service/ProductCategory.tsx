@@ -3,9 +3,11 @@ export interface ProductCategory {
   id?: number;
   categoryName: string;
   sort?: number;
-  slug?: string;
-  status: number;
-  parentId: number;
+  slug: string;
+  color?: string;
+  image: string;
+  status?: number;
+  parentId?: number;
 }
 
 // export type ProductCategories = Pick<
