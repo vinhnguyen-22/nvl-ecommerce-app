@@ -15,7 +15,7 @@ const Promotion = () => {
       </div>
       <div className="flex flex-col col-span-6 gap-2 h-full">
         <div className="flex flex-col flex-1 rounded-md h-1/2">
-          <div className={ProductDivStyle + 'h-full'}>
+          <div className={ProductDivStyle + ' h-full'}>
             <div className=" w-full rounded-lg text-gray-800 p-6">
               <div>
                 <h3 className="text-xs font-bold ">Modern literature</h3>

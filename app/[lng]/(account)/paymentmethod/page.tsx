@@ -2,12 +2,8 @@
 
 import PaymentMethod from '@/components/payment/PaymentMethods';
 
-
 const UserPaymentPage = () => {
-
-  return (
-    <PaymentMethod/>
-  );
+  return <PaymentMethod />;
 };
 
 export default UserPaymentPage;
