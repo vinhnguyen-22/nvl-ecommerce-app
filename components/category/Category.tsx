@@ -5,6 +5,7 @@ import CategoryLgBox from './CategoryLgBox';
 import CategorySmBox from './CategorySmBox';
 
 const Category = ({ categories }: any) => {
+  console.log(categories);
   return (
     <div className="flex flex-col items-center my-4 md:my-8">
       <SectionTitle title={'CategoryOfGoods'} />
@@ -12,6 +13,8 @@ const Category = ({ categories }: any) => {
       {/* 📱 sm and md break point */}
       <div className="flex flex-wrap justify-around items-center lg:hidden">
         {categories.map((categoryItem: ProductCategory) => {
+  console.log(categoryItem);
+
           return (
             <CategorySmBox
               color={categoryItem.color}
