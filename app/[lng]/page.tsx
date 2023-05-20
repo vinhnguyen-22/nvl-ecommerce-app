@@ -18,7 +18,7 @@ import { useSWRConfig } from 'swr';
 import useSWR from 'swr';
 import { toast } from 'react-toastify';
 import { getAllSlideFn } from '@/redux/features/slides/service/slides.api';
-import { getAllProductCategoriesFn } from '@/redux/features/category/service/category.api';
+import { getAllBrandFn, getAllProductCategoriesFn } from '@/redux/features/category/service/category.api';
 
 const Offers = dynamic(() => import('@/components/Offers/Offers'));
 const Category = dynamic(() => import('@/components/category/Category'));
@@ -49,6 +49,11 @@ const HomePage = ({ searchParams }: any) => {
     getAllProductCategoriesFn,
   );
 
+  const { data: brands, isLoading: brandsLoading } = useSWR(
+    '/getAllBrands',
+    getAllBrandFn,
+  );
+
   // if (slide?.success !== true) toast.error(slide?.message);
   // const { data: productData, isLoading: productLoading } = useSWR(
   //   '/gettingAllProductsFOrAdmin',
@@ -74,7 +79,7 @@ const HomePage = ({ searchParams }: any) => {
       {!categoriesLoading && <Category categories={categories} />}
       <Newest />
       <Banners />
-      <Brands />
+      {!brandsLoading && <Brands brands={brands}/>}
     </ClientOnly>
   );
 };

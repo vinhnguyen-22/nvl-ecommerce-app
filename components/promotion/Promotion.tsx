@@ -34,7 +34,7 @@ const Promotion = () => {
                 width={250}
                 height={200}
                 alt="listing"
-                src="/images/sale1.jpg"
+                src="/images/promotion-img/sale1.jpg"
                 className="
                   rounded-lg
                   shadow-lg
@@ -62,7 +62,7 @@ const Promotion = () => {
               width={750}
               height={500}
               alt="listing"
-              src="/images/sale1.jpg"
+              src="/images/promotion-img/sale1.jpg"
               className="
                   rounded-lg
                   shadow-lg
@@ -82,7 +82,7 @@ const Promotion = () => {
                 width={100}
                 height={300}
                 alt="listing"
-                src="/images/sale1.jpg"
+                src="/images/promotion-img/sale1.jpg"
                 className="
                   rounded-lg
                   shadow-lg
@@ -119,7 +119,7 @@ const Promotion = () => {
                 width={150}
                 height={100}
                 alt="listing"
-                src="/images/sale1.jpg"
+                src="/images/promotion-img/sale1.jpg"
                 className="
                   rounded-lg
                   shadow-lg
@@ -144,7 +144,7 @@ const Promotion = () => {
                 width={250}
                 height={200}
                 alt="listing"
-                src="/images/sale1.jpg"
+                src="/images/promotion-img/sale1.jpg"
                 className="
                   rounded-lg
                   shadow-lg
