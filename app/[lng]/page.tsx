@@ -71,7 +71,7 @@ const HomePage = ({ searchParams }: any) => {
       <Benefits />
       <Promotion />
       <Offers />
-      <Category />
+      {!categoriesLoading && <Category categories={categories} />}
       <Newest />
       <Banners />
       <Brands />

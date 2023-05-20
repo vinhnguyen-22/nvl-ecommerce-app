@@ -1,16 +1,18 @@
 import http from '@/lib/http';
 
 export interface ICategory {
-  imgSrc: string;
-  bgc: string;
-  categoryTitle: string;
-  href: string;
+  categoryName: string;
+  sort: number;
+  slug: string;
+  status: number;
+  color: string;
+  parent: ICategory;
 }
 
 export const getAllProductCategoriesFn = async () => {
   try {
     const fetcher = await http
-      .get<ICategory>('categories/all')
+      .get<ICategory>('productCategories/all')
       .then((res) => res.data);
     return fetcher;
   } catch (error) {

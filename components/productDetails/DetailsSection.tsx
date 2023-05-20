@@ -35,7 +35,7 @@ const DetailsSection: React.FC<Props> = ({ product }) => {
           </div>
           <h3 className="text-lg mt-2">Product Details</h3>
           <div className="mt-4">
-            {Object.keys(product.details!).map((key) => {
+            {/* {Object.keys(product.details!).map((key) => {
               const detailsValue = Array.isArray(product.details![key])
                 ? [...product.details![key]].join(' - ')
                 : product.details![key] === true
@@ -56,7 +56,7 @@ const DetailsSection: React.FC<Props> = ({ product }) => {
                   </p>
                 </div>
               );
-            })}
+            })} */}
           </div>
         </div>
         <CallToAction product={product} />
