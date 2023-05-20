@@ -1,10 +1,12 @@
 import http from '@/lib/http';
 
 export interface ICategory {
-  imgSrc: string;
-  bgc: string;
-  categoryTitle: string;
-  href: string;
+  categoryName: string;
+  sort: number;
+  slug: string;
+  status: number;
+  color: string;
+  parent: ICategory;
 }
 
 export const getAllProductCategoriesFn = async () => {

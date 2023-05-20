@@ -6,13 +6,24 @@ import { IProduct } from '@/lib/types/products';
 import ProductList from '@/components/productList/ProductList';
 import { ICategoryPathsParams } from '@/lib/types/pagePathsParams';
 import { products } from '@/mock/products';
+import { getAllProductByCateogryFn } from '@/redux/features/product/service/product.api';
+import useSWR from 'swr';
 
-const categoryPage = ({ products }: { products: IProduct[] }) => {
-  return (
-    <div>
-      <ProductList productList={products} />
-    </div>
+const categoryPage = async (searchParams: any) => {
+  const urlParams = {
+    keyword: searchParams.keyword,
+    page: searchParams.page,
+    category: searchParams.category,
+    'price[gte]': searchParams.min,
+    'price[lte]': searchParams.max,
+    'ratings[gte]': searchParams.ratings,
+  };
+
+  const { data: products, isLoading: productLoading } = useSWR(
+    '/getAllProductByCateogry',
+    await getAllProductByCateogryFn(searchParams),
   );
+  return <div>{!productLoading && <ProductList productList={products} />}</div>;
 };
 
 export default categoryPage;
