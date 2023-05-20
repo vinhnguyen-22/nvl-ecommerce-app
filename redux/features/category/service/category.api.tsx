@@ -10,7 +10,7 @@ export interface ICategory {
 export const getAllProductCategoriesFn = async () => {
   try {
     const fetcher = await http
-      .get<ICategory>('categories/all')
+      .get<ICategory>('productCategories/all')
       .then((res) => res.data);
     return fetcher;
   } catch (error) {
